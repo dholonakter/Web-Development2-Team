@@ -58,7 +58,7 @@ a:hover{
 
 
  .logo,.container{
-        margin-left: 320px;
+        margin-left: 280px;
         padding-top: 40px;  
     
 
@@ -97,3 +97,42 @@ a:hover{
     width: 240px;
 }
 
+.pic1{
+    height: 150px;
+    width: 150px;
+    float: left;
+    margin-left: 120px;
+    margin-right: 250px;
+    padding: 30px;
+}
+.pic2{
+    height: 150px;
+    width: 150px;
+    float: left;
+    margin-right: 230px;
+    padding: 30px;
+}
+.pic3{
+    height: 150px;
+    width: 180px;
+    float: left;
+    margin-right: 230px;
+    padding: 30px;
+}
+
+.image{
+    width: 380px;
+    float: left;
+}
+.clothes{
+    height: 150px;
+    width: 150px;
+    float: left;
+    margin-right: 230px;
+    padding: 30px;
+}
+.product{
+    width: 200px;
+    height: 300px;
+    float: left;
+}
