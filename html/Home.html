@@ -2,50 +2,54 @@
 <html>
 <head>
 <title>Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css"href="../css/main.css" />
 </head>
 <body>
+<div class="topnavbar">
     <div class="logo">
-         <a href="Home.html"><img src="../images/WhatsApp%20Image%202018-08-31%20at%202.50.20%20PM.jpeg" width="120px" height="80px"/></a>
+    <a href="Home.html"><img src="../images/WhatsApp%20Image%202018-08-31%20at%202.50.20%20PM.jpeg" width="220px" height="100px"/></a>
+
     </div>
     <div class="searchbar">
-            <form action="/search_page.php">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit"><i class="search"></i></button>
-        </form>
+        <input class="search-txt" type="text" name="" placeholder="type of serach">
+        <a class="search-btn" href="#">
+           <i class="fas fa-search"></i>        
+        </a>
     </div>
-    
-    <div class="navbar">
-     <ul >
+<div class="navbar">
+        <ul >
        <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Product</a></li>
         <li><a href="#">Rules</a></li>
         <li><a href="#">Contact</a></li>
        <li><a href="#">Login</a></li>
-       <li><a href="#">Basket</a></li>
+       <li><a href="#">ShippingBasket</a></li>
+        </ul>
+ </div>
+   <div class="container">
+       
+        <div class="slideshowimage">
+            <img src="../images/homepage.jpeg" width="1000" height="500"/>
+            </div>
 
-     </ul>
-    </div>
-    <div class="slideshowimage">
-    <img src="../images/homepage.jpeg" width="1000" height="500"/>
-    </div>
-    <div class="image">
+<div class="image">
          <figure><img src="../images/product4.jpeg" width="400" height="220"/>
         <br/><figcaption>Clothes</figcaption></figure>
-    <p><figure>
+         <p><figure>
         <img src="../images/product1.jpeg" width="400" height="220"/>
         <br/><figcaption>Accesorries</figcaption></figure></p>
-    <p><figure>
+         <p><figure>
         <img src="../images/product3.jpeg" width="400" height="220"/>
         <br/><figcaption>Electronic devices</figcaption></figure></p>
-   
-    </div>
+</div>
+       </div>
+
     
-    <footer>
-        Copyright &copy; 2018 abc
-    </footer>
+<footer>
+    Copyright &copy; 2018 abc
+ </footer>
 
 </body>
 </html>
