@@ -97,42 +97,44 @@ a:hover{
     width: 240px;
 }
 
-.pic1{
-    height: 150px;
-    width: 150px;
+.homegallery {
+    margin-left: 200px;
+    border: 1px ;
     float: left;
-    margin-left: 120px;
-    margin-right: 250px;
-    padding: 30px;
-}
-.pic2{
-    height: 150px;
-    width: 150px;
-    float: left;
-    margin-right: 230px;
-    padding: 30px;
-}
-.pic3{
-    height: 150px;
-    width: 180px;
-    float: left;
-    margin-right: 230px;
-    padding: 30px;
+    width: 200px;
 }
 
-.image{
-    width: 380px;
-    float: left;
+.homegallery:hover {
+    border: 1px;
 }
-.clothes{
-    height: 150px;
-    width: 150px;
-    float: left;
-    margin-right: 230px;
-    padding: 30px;
+
+.homegallery img {
+    width: 190%;
+    height: 70%;
 }
-.product{
-    width: 200px;
-    height: 300px;
+.category{
     float: left;
+    margin-left: 80px;
+    
+}
+.gallery {
+    margin: 20px;
+    border: 1px ;
+    float: left;
+    width: 180px;
+    margin-left: 100px;
+}
+
+.gallery:hover {
+    border: 1px;
+}
+
+.gallery img {
+    width: 110%;
+    height: 250px;
+}
+
+.desc {
+    padding: 10px;
+    text-align: center;
 }
