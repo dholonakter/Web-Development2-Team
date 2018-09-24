@@ -25,7 +25,6 @@ h1{
 
 }
 
-
  .logo,.container{
         margin-left: 320px;
         padding-top: 40px;  
@@ -97,8 +96,7 @@ h1{
     text-align: center;
     padding: 10px 12px;
     text-decoration: none;
-    margin-right: 0px;
-    
+    margin-right: 0px;  
 
 }
 
@@ -278,10 +276,21 @@ input[type=send]:hover {
 
 /*login page */
 .logincontainer{
-    text-align: center;
+
+    float: left;
+    margin-left: 630px;
+    margin-bottom: 100px;
+    margin-top: 80px;
 }
-
-
+.loginlogo{
+    float: inherit;
+    margin-left: 30px;
+}
+.inputlogin{
+    width: 60%;
+    margin: 10px;
+    float: right;
+}
 /*footer*/
 footer {
     width: 100%;
@@ -291,8 +300,35 @@ footer {
     padding: 10px;
     clear: left; /*if i need to remove the wrap the footer on any element,i need to clear the position of side*/
 }
-    
+/*signup page*/
+.container{
+    float: left;
+    margin-left: 530px;
+    margin-bottom: 150px;
+}
+.signuplogo{
+    float: inherit;
+    margin-right: 175px;
+}
+.inputbox{
+    width: 60%;
+    margin: 10px;
+    float: right;
+    margin-right: 10px;
+}
+.button {
+    background-color: crimson;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
 
+button:hover {
+    opacity: 0.8;
+}
 
 
 
