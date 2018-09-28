@@ -7,7 +7,6 @@ $dbname = "mydb";
 
 
 
-
 /*$servername = "studmysql01.fhict.local";
 $username = "dbi364365";
 $password = "Dholon";
@@ -24,6 +23,7 @@ else{
   echo "Connected ";
 
 }
+session_start();
 
 $Email =$Password=  "";
 function test_input($data)

@@ -87,7 +87,8 @@ if (empty($_POST["Password"]))
   */
        $sql ="INSERT INTO signup (FullName, Email,Password)
         VALUES('$FullName','$Email', '$Password')";
-      
+                                         	header("location: index.php");
+
       if ($conn->query($sql) === TRUE) 
     {
      echo "New record created successfully";
@@ -100,8 +101,7 @@ if (empty($_POST["Password"]))
 
 
   
-              $conn->close();
-
+$conn->close();
 
       
   }

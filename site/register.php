@@ -1,3 +1,72 @@
+<?php
+session_start();
+
+// initializing variables
+$_SESSION['message']='';
+
+
+$servername = "studmysql01.fhict.local";
+$username = "dbi364365";
+$password = "Dholon";
+$dbname="dbi364365";
+
+$db = mysqli_connect($servername,$username,$passwordb,$dbname);
+
+if ($db->connect_error)
+{
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+function test_input($data)
+{
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+}
+
+// REGISTER USER
+if ($_SERVER['REQUEST_METHOD']== "POST")
+{
+        if($_POST['Password']==$_POST['confirmpassword'])
+        
+        {
+            $FullName = test_input($_POST["FullName"]);
+              $Email    = test_input($_POST["Email"]);
+            $Password = test_input($_POST["Password"]);
+
+            $sql ="INSERT INTO signup (FullName, Email,Password)
+             VALUES('$FullName','$Email', '$Password')";
+            if($db->query($sql)==true)
+            {
+                $_SESSION['message']='register successful';
+                header("location: index.php");
+
+
+            }
+            else{
+                $_SESSION['message']='user can not added';
+            }
+  		
+            
+
+        }
+    
+    else{
+        $_SESSION['message']="two password does not match";
+        
+    }
+
+
+}
+        
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,26 +99,29 @@
        <li><a href="basket.html">ShippingBasket</a></li>
         </ul>
  </div>
-    <form action="signup.php" method="POST">
+    <form action="register.php" method="POST">
   <div class="container">
     <h1><img class="signuplogo" class="formlogo" src="images/WhatsApp%20Image%202018-08-31%20at%202.50.20%20PM.jpeg" width="180px" height="100px"/></h1>
     <br><p>Please fill in this form to create an account.</p>
     <hr>
       <br>
+        <div class="alert alert-error"><?=$_SESSION['message']?></div>
+      <hr>
+
 
     <label for="fullname"><b>FullName</b></label>
     <input class="inputbox" type="text" placeholder="Enter your name" name="FullName" required>
       <br>
       <label for="email"><b>Email</b></label>
-    <input class="inputbox" type="text" placeholder="Enter Email" name="Email" required>
+    <input class="inputbox" type="email" placeholder="Enter Email" name="Email" required>
       <br>
 
     <label for="psw"><b>Password</b></label>
     <input class="inputbox" type="password" placeholder="Enter Password" name="Password" required>
       <br>
-          
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input class="inputbox" type="password" placeholder="Repeat Password" name="confirmpassword" required>
     
-
     
  <p>Already have an account!!!<a href="login.html">login here</a>.</p>
 
