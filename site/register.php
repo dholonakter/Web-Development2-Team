@@ -83,14 +83,14 @@ if ($_SERVER['REQUEST_METHOD']== "POST")
     <link rel="stylesheet" type="text/css"href="css/main.css" />
 
 </head>
-<body>
+
 <div class="topnavbar">
     <div class="logo">
     <a href="index.php"><img src="images/WhatsApp%20Image%202018-08-31%20at%202.50.20%20PM.jpeg" width="220px" height="100px"/></a>
 
     </div>
     <div class="searchbar">
-        <input class="search-txt" type="text" name="" placeholder="type of serach">
+        <input class="search-txt" type="text" name="" placeholder="type of search">
         <a class="search-btn" href="#">
            <i class="fas fa-search"></i>        
         </a>
@@ -104,11 +104,14 @@ if ($_SERVER['REQUEST_METHOD']== "POST")
         <li><a href="returnpolicy.html">Rules</a></li>
         <li><a href="contact.html">Contact</a></li>
        <li><a href="login.html">Login</a></li>
-       <li><a href="basket.html">ShippingBasket</a></li>
+       <li><a href="basket.html">ShoppingBasket</a></li>
         </ul>
  </div>
+
+<body>
+    
     <form action="register.php" method="POST">
-  <div class="container">
+  <div class="signupcontainer">
     <h1><img class="signuplogo" class="formlogo" src="images/WhatsApp%20Image%202018-08-31%20at%202.50.20%20PM.jpeg" width="180px" height="100px"/></h1>
     <br><p>Please fill in this form to create an account.</p>
     <hr>

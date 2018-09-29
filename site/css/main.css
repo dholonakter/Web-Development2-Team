@@ -2,6 +2,7 @@ body{
     margin:0;
     padding:0;
     background: white;
+    
 }
 
 h1{
@@ -115,12 +116,15 @@ a:hover{
 /*slideshowimagepart,it will be implemented by javascript*/
 
 .slideshowimage{
-    margin-left: 450px;
+    margin-left: 390px;
     width=750; 
     height=500;
     margin-top: 20px;
 }
-
+.container{
+    float: left;
+    margin-left: 150px;
+}
 
 /*images of home page*/
 
@@ -128,7 +132,10 @@ a:hover{
 .image{
     width: 280px;
     height: 200px;
+    float: left;
+    margin-left: 45px;
 }
+
 
 figure{
     display: inline-block;
@@ -144,7 +151,7 @@ h2{
     width: 300px;
     height:200px; 
     margin: 20px;
-    margin-left: 200px;
+    margin-left: 80px;
 }
 /*productpage styles*/
 
@@ -176,6 +183,15 @@ h2{
 }
 .rowgalary{
     clear: left;
+}
+
+/*Shoppingbasket*/
+.items{
+    float: left;
+    
+}
+.payment{
+    
 }
 
 /*contact page */
@@ -301,7 +317,7 @@ footer {
     clear: left; /*if i need to remove the wrap the footer on any element,i need to clear the position of side*/
 }
 /*signup page*/
-.container{
+.signupcontainer{
     float: left;
     margin-left: 530px;
     margin-bottom: 150px;
@@ -360,4 +376,33 @@ button:hover {
   color: #21ec0c;
   background-color: #15360e;
   box-shadow: 0 0 0 1px #2a551e inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+}
+/*welcomepage*/
+.infocontainer{
+    float: inherit;
+    margin-top: 100px;
+    margin-left: 150px;
+    margin-bottom: 100px;
+    padding: px;
+}
+.welcome{
+    float: left;
+    margin-left: 450px;
+}
+
+.logoutbutton{
+    background-color: crimson;
+    color: white;
+    padding: 14px 20px;
+    float: right;
+    margin-right: 150px;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+}
+.profilepic{
+    margin-left: 140px;
+}
+.info{
+    margin-left: 140px;
 }
