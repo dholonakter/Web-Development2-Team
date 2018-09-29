@@ -19,13 +19,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 else{
-    
-  echo "Connected ";
-
+    echo "connected";
 }
+
 session_start();
 
 $Email =$Password=  "";
+$_SESSION['message']='';
+
 function test_input($data)
 {
         $data = trim($data);
@@ -35,42 +36,56 @@ function test_input($data)
 }
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $Email    = test_input($_POST["Email"]);
+/*if (isset($_POST['Login']))
+    
+{
+    if(empty($_POST["Email"])|| empty($_POST["Password"]))
+    {
+        header("Location:loginuser.php?Empty=Please fill in the blanks");
+    }
+        
+
+}
+
+else
+ {
+    echo "not working ";
+}*/
+
+if()
+if ((isset['Login']) {
+			
+       $Email = test_input($_POST["Email"]);
        $Password = test_input($_POST["Password"]);
+                
+          $sql = "SELECT * FROM signup  WHERE Email = '$Email' and Password = '$Password' limit 1";
+          $result = mysqli_query($conn,$sql);
+    $row=mysqli_fetch_array($result);
+         $id=$row['Id'];
+    $db_password=$row['Password'];
+    
+    if($Password=$db_password)
+    {
+                     
         
-        // data insert
+        $_SESSION['Email']=$Email;
+        header("Location:index.php");
+
+
+    }
     
-          $sql = "SELECT id FROM login  WHERE Email = '$Email' and Password = '$Password'";
-          $result = mysqli_query($sql);
-          $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-          $active = $row['active'];
-                $count = mysqli_num_rows($result);
+    {
+        echo "you did not enter coorect";
+  
+    }
+          
+          
     
-          if($count == 1) {
-              
-        header("location: signup.php");
-
-          }
-    
-      else {
-         $error = "Your Login Name or Password is invalid";
-      }
-
-
-
-
-
-
- 
-        
-    $conn->close();
-
+     
+}
              
       
         
-    }
-      
 
 
 

@@ -10,7 +10,12 @@ $username = "dbi364365";
 $password = "Dholon";
 $dbname="dbi364365";
 
-$db = mysqli_connect($servername,$username,$passwordb,$dbname);
+/*$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mydb";*/
+
+$db = mysqli_connect($servername,$username,$password,$dbname);
 
 if ($db->connect_error)
 {
@@ -40,12 +45,15 @@ if ($_SERVER['REQUEST_METHOD']== "POST")
             if($db->query($sql)==true)
             {
                 $_SESSION['message']='register successful';
-                header("location: index.php");
+                header("location: loginuser.php");
 
 
             }
             else{
                 $_SESSION['message']='user can not added';
+                
+                header("location: welcomeuser.php");
+
             }
   		
             
@@ -78,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD']== "POST")
 <body>
 <div class="topnavbar">
     <div class="logo">
-    <a href="index.html"><img src="images/WhatsApp%20Image%202018-08-31%20at%202.50.20%20PM.jpeg" width="220px" height="100px"/></a>
+    <a href="index.php"><img src="images/WhatsApp%20Image%202018-08-31%20at%202.50.20%20PM.jpeg" width="220px" height="100px"/></a>
 
     </div>
     <div class="searchbar">
@@ -90,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD']== "POST")
     </div>
 <div class="navbar">
         <ul >
-       <li><a href="index.html">Home</a></li>
+       <li><a href="index.php">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="product.html">Product</a></li>
         <li><a href="returnpolicy.html">Rules</a></li>
