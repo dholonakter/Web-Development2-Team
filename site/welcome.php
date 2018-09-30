@@ -1,3 +1,10 @@
+<?php
+      session_start();
+            
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,50 +33,42 @@
         <li><a href="product.html">Product</a></li>
         <li><a href="returnpolicy.html">Rules</a></li>
         <li><a href="contact.html">Contact</a></li>
-       <li><a href="login.html">Login</a></li>
+       <li><a href="loginuser.php">Login</a></li>
        <li><a href="basket.html">ShoppingBasket</a></li>
         </ul>
  </div>
     
- <body>   
-     <button class="logoutbutton" name="logout">LogOut</button>
-    <div class="infocontainer">
-        
-        
-        
-        <div class="user">
-            <a><img class="profilepic" src="images/profilepic.png" width="200px" height="200px"></a>
-            <div class="info">
-            <figcaption>Name:</figcaption>
-            <figcaption>Email:</figcaption>
+ <body>  
+     
+     <h2>Welcome at <b>Orange</b></h2>
+
+        <?php
+                  
+        if(isset($_SESSION['User']))
+        {
+                                 
+            echo "<h2> Your user name is ::" . $_SESSION['User'] . "</h2>";
+            echo '<a class="nav-link assigned log" href="logout.php">Logout</a>';
+
+
+         }
             
-        </div>
-           
-        </div>
-       
+        else
+        {
+            header("location:loginuser.php");
+        }
+
+
+        ?>
         
-          
-        
-        
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    <img src="images/profilepic.png" alt="Paris" class="center">
+
+             
     <footer>
           
     <p>&copy; Copywright  2012 Supershop. All Rights Reserved</p>
 
-    </footer>
+ </footer>
     
     
 </body>

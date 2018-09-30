@@ -2,11 +2,6 @@
 session_start();
 
 
-/*$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mydb";*/
-
 $servername = "studmysql01.fhict.local";
 $username = "dbi364365";
 $password = "Dholon";
@@ -29,40 +24,33 @@ if ($conn->connect_error)
 if (isset($_POST['Login']))
     
 {
-    
-     $sql = "SELECT * FROM signup  WHERE Email = '".$_POST['Email']."' and Password = '".$_POST['Password']."'";
+     $sql = "SELECT * FROM user  WHERE Email = '".$_POST['Email']."' and Password = '".$_POST['Password']."'";
 
-    $result=mysqli_query($conn,$sql);
+      $result=mysqli_query($conn,$sql);
             
         if(mysqli_fetch_assoc($result))
         {
             $_SESSION['User']=$_POST['Email'];
-            header("location: welcomeuser.php");
+            header("location: welcome.php");
 
         }
         else
         {
-            header("location: register.php");
+             $_SESSION['message']="invalid username and password";
 
 
         }
-
-     
+   
 }
-
 
 
 ?>
              
-  
-
-
-
 
 <!DOCTYPE html>
 <html>
 <head>
-<title>About</title>
+<title>login</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css"href="css/main.css" />
 
@@ -82,23 +70,23 @@ if (isset($_POST['Login']))
     </div>
 <div class="navbar">
         <ul >
-       <li><a href="index.html">Home</a></li>
+       <li><a href="index.php">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="product.html">Product</a></li>
         <li><a href="returnpolicy.html">Rules</a></li>
         <li><a href="contact.html">Contact</a></li>
-       <li><a href="login.html">Login</a></li>
+       <li><a href="loginuser.php">Login</a></li>
        <li><a href="basket.html">ShippingBasket</a></li>
         </ul>
  </div>
     
 <form action="loginuser.php" method="POST">
-  <div class="container">
+  <div class="signupcontainer">
     <h1><img class="signuplogo" class="formlogo" src="images/WhatsApp%20Image%202018-08-31%20at%202.50.20%20PM.jpeg" width="180px" height="100px"/></h1>
       <h2>Login</h2>
     <hr>
       <br>
-        <div class="alert alert-error"></div>
+        <div class="alert alert-error"><?=$_SESSION['message']?></div>
       <hr>
 
 
@@ -111,12 +99,9 @@ if (isset($_POST['Login']))
       <br>
       
     
-    
-
-
-      <button class="button" name="Login" class="signupbtn">Sign Up</button>
+      <button class="button" name="Login" class="signupbtn">Login</button>
             <div class="psw"> <a href="#"> Forgot password?</a></div><br>
-               <div id="new">New to Orange <a href="signUp.html">Signup?</a></div><br>
+               <div id="new">New to Orange <a href="register.php">Signup?</a></div><br>
 
 
     </div>

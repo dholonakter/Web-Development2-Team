@@ -378,19 +378,10 @@ button:hover {
   box-shadow: 0 0 0 1px #2a551e inset, 0 5px 10px rgba(0, 0, 0, 0.75);
 }
 /*welcomepage*/
-.infocontainer{
-    float: inherit;
-    margin-top: 100px;
-    margin-left: 150px;
-    margin-bottom: 100px;
-    padding: px;
-}
-.welcome{
-    float: left;
-    margin-left: 450px;
-}
 
-.logoutbutton{
+
+
+logoutbutton{
     background-color: crimson;
     color: white;
     padding: 14px 20px;
@@ -400,9 +391,15 @@ button:hover {
     cursor: pointer;
     width: 10%;
 }
-.profilepic{
-    margin-left: 140px;
+.profilepicture{
+    float: right;
 }
-.info{
-    margin-left: 140px;
+.center {
+    margin-left: 600px;
+    width: 20%;
+    margin-bottom: 100px;
+}
+.log{
+    float: right;
+    margin-right: 150px;
 }

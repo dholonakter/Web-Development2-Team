@@ -4,16 +4,12 @@ session_start();
 // initializing variables
 $_SESSION['message']='';
 
-
 $servername = "studmysql01.fhict.local";
 $username = "dbi364365";
 $password = "Dholon";
 $dbname="dbi364365";
 
-/*$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mydb";*/
+//connect to the database
 
 $db = mysqli_connect($servername,$username,$password,$dbname);
 
@@ -21,7 +17,9 @@ if ($db->connect_error)
 {
     die("Connection failed: " . $conn->connect_error);
 } 
-
+//htmlspecialchair prevents attackers from exploting the code by injecting html or javasript code
+//strip unneccessay characters with trim() function
+//remove baclashes with user input data striplashes() function
 function test_input($data)
 {
         $data = trim($data);
@@ -31,33 +29,46 @@ function test_input($data)
 }
 
 // REGISTER USER
+//the user check whether form has been submitted or not.if the request method is post,the the form has been submitted
 if ($_SERVER['REQUEST_METHOD']== "POST")
 {
         if($_POST['Password']==$_POST['confirmpassword'])
         
         {
-            $FullName = test_input($_POST["FullName"]);
-              $Email    = test_input($_POST["Email"]);
+           $FullName = test_input($_POST["FullName"]);
+            $Email    = test_input($_POST["Email"]);
             $Password = test_input($_POST["Password"]);
+            //check wheather email is used or not
+            $checkuse = "SELECT * FROM User  WHERE Email = '$Email'";
+            $result=mysqli_query($db,$checkuse);
+            $yes=mysqli_num_rows($result);
+            if($yes>0)
+            {
+             $_SESSION['message']='Email already used,can not be registered';
 
-            $sql ="INSERT INTO signup (FullName, Email,Password)
+
+
+            }
+            else{
+            //insert data to the user table
+            $sql ="INSERT INTO User (FullName, Email,Password)
              VALUES('$FullName','$Email', '$Password')";
             if($db->query($sql)==true)
             {
-                $_SESSION['message']='register successful';
+                
                 header("location: loginuser.php");
-
 
             }
             else{
                 $_SESSION['message']='user can not added';
                 
-                header("location: welcomeuser.php");
+                header("location: register.php");
 
             }
-  		
+                
+            }
             
-
+            
         }
     
     else{
@@ -78,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD']== "POST")
 <!DOCTYPE html>
 <html>
 <head>
-<title>About</title>
+<title>Register</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css"href="css/main.css" />
 
@@ -103,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD']== "POST")
         <li><a href="product.html">Product</a></li>
         <li><a href="returnpolicy.html">Rules</a></li>
         <li><a href="contact.html">Contact</a></li>
-       <li><a href="login.html">Login</a></li>
+       <li><a href="loginuser.php">Login</a></li>
        <li><a href="basket.html">ShoppingBasket</a></li>
         </ul>
  </div>
@@ -134,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD']== "POST")
     <input class="inputbox" type="password" placeholder="Repeat Password" name="confirmpassword" required>
     
     
- <p>Already have an account!!!<a href="login.html">login here</a>.</p>
+ <p>Already have an account!!!<a href="loginuser.php">login here</a>.</p>
 
 
       <button class="button" type="submit" class="signupbtn">Sign Up</button>
