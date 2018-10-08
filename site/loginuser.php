@@ -1,13 +1,10 @@
 <?php 
 session_start();
 
-
 $servername = "studmysql01.fhict.local";
 $username = "dbi364365";
 $password = "Dholon";
 $dbname="dbi364365";
-
-
 
 
 
@@ -19,18 +16,23 @@ if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
 } 
 
-
+$_SESSION['message']="";
 
 if (isset($_POST['Login']))
     
 {
-     $sql = "SELECT * FROM user  WHERE Email = '".$_POST['Email']."' and Password = '".$_POST['Password']."'";
+    $email=mysqli_real_escape_string($conn,$_POST['Email']); //The mysqli_real_escape_string() function escapes special characters in a string for use in an SQL statement.
+    $pass=mysqli_real_escape_string($conn,$_POST['Password']);
+    $pass=md5($pass);
+
+     $sql = "SELECT * FROM user  WHERE Email = '$email' and Password = '$pass'";
+
 
       $result=mysqli_query($conn,$sql);
             
         if(mysqli_fetch_assoc($result))
         {
-            $_SESSION['User']=$_POST['Email'];
+            $_SESSION['User']=$email;
             header("location: welcome.php");
 
         }
@@ -40,6 +42,7 @@ if (isset($_POST['Login']))
 
 
         }
+    
    
 }
 

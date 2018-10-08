@@ -15,7 +15,7 @@ $db = mysqli_connect($servername,$username,$password,$dbname);
 
 if ($db->connect_error)
 {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $db->connect_error);
 } 
 //htmlspecialchair prevents attackers from exploting the code by injecting html or javasript code
 //strip unneccessay characters with trim() function
@@ -38,15 +38,14 @@ if ($_SERVER['REQUEST_METHOD']== "POST")
            $FullName = test_input($_POST["FullName"]);
             $Email    = test_input($_POST["Email"]);
             $Password = test_input($_POST["Password"]);
+            $Password=md5($Password);
             //check wheather email is used or not
-            $checkuse = "SELECT * FROM User  WHERE Email = '$Email'";
-            $result=mysqli_query($db,$checkuse);
+            $checkuser = "SELECT * FROM User  WHERE Email = '$Email'";
+            $result=mysqli_query($db,$checkuser);
             $yes=mysqli_num_rows($result);
             if($yes>0)
             {
              $_SESSION['message']='Email already used,can not be registered';
-
-
 
             }
             else{
