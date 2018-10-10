@@ -39,15 +39,15 @@
     <div class="imagerow">
         <div class="imagecolumn">
             <figure>
-                <img class="image" src="images/product4.jpeg">
+                <img class="image" src="images/product4.jpeg" width="300" height="200">
                 <figcaption>Clothes</figcaption>
             </figure>
             <figure>
-                <img class="image" src="images/product2.jpeg">
+                <img class="image" src="images/product2.jpeg" width="300" height="200">
                 <figcaption>Accessories</figcaption>
             </figure>
             <figure>
-                <img class="image" src="images/product3.jpeg">
+                <img class="image" src="images/product3.jpeg" width="300" height="200">
                 <figcaption>Electronic devices</figcaption>
             </figure>
         </div>

@@ -115,30 +115,36 @@ a:hover{
 /*Homepage */
 /*slideshowimagepart,it will be implemented by javascript*/
 
-.slideshowimage{
-    margin-left: 390px;
-    width=750; 
-    height=500;
-    margin-top: 20px;
+.slideshowcontainer {
+  max-width: 1000px;
+  position: relative;
+  margin-left: 350px;
 }
-.container{
-    float: left;
-    margin-left: 150px;
+.dot {
+  height: 10px;
+  width: 10px;  
+  background-color: darkgrey;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active {
+  background-color: grey;
 }
 
 /*images of home page*/
-
-
-.image{
-    width: 280px;
-    height: 200px;
+.container{
     float: left;
-    margin-left: 45px;
+    margin:auto;
 }
-
-
+.image{
+    margin-left: 100px;
+}
 figure{
     display: inline-block;
+}
+.figcaption{
+    margin-left: 200px;
 }
 
 /*Aboutpage*/
@@ -184,7 +190,15 @@ h2{
 .rowgalary{
     clear: left;
 }
-
+.buybutton{
+    display: inline-block;
+    margin-left: 50px;
+    background-color: crimson;
+    color: white;
+}
+buybutton:hover{
+    opacity: 0.8;
+}
 /*Shoppingbasket*/
 .items{
     float: left;

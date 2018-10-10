@@ -1,10 +1,16 @@
 <?php 
 session_start();
 
-$servername = "studmysql01.fhict.local";
-$username = "dbi364365";
-$password = "Dholon";
-$dbname="dbi364365";
+//$servername = "studmysql01.fhict.local";
+//$username = "dbi364365";
+//$password = "Dholon";
+//$dbname="dbi364365";
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname="mydb";
+
 
 
 
