@@ -4,12 +4,14 @@
 <script src="JS/script.js"></script>
 </head>
 <body>
+<form name="myForm" onsubmit="return validateForm()" method="post">
+FullName: <input type="text" name="FullName">
+ Email: <input type="email" name="Email">
+Password: <input type="confirmpass" name="Password">
+ConfirPassword: <input type="confirmpass" name="confirmpassword">
 
-<h2>JavaScript in Head</h2>
-
-<p id="demo">A Paragraph.</p>
-
-<button type="button" onclick="myFunction()">Try it</button>
+<input type="submit" value="Submit">
+</form>
 
 </body>
 </html> 
