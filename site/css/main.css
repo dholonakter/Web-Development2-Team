@@ -207,6 +207,9 @@ buybutton:hover{
 .payment{
     
 }
+#error{
+    color: red;
+}
 
 /*contact page */
 

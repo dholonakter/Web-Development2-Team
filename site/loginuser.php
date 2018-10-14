@@ -1,27 +1,6 @@
 <?php 
+include "dbconnect.php";
 session_start();
-
-//$servername = "studmysql01.fhict.local";
-//$username = "dbi364365";
-//$password = "Dholon";
-//$dbname="dbi364365";
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname="mydb";
-
-
-
-
-$conn = new mysqli($servername, $username, $password,$dbname);
-
-// Check connection
-if ($conn->connect_error) 
-{
-    die("Connection failed: " . $conn->connect_error);
-} 
-
 $_SESSION['message']="";
 
 if (isset($_POST['Login']))
@@ -62,6 +41,8 @@ if (isset($_POST['Login']))
 <title>login</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css"href="css/main.css" />
+        <script src="JS/script.js"></script>
+
 
 </head>
 <body>
@@ -85,26 +66,29 @@ if (isset($_POST['Login']))
         <li><a href="returnpolicy.html">Rules</a></li>
         <li><a href="contact.html">Contact</a></li>
        <li><a href="loginuser.php">Login</a></li>
-       <li><a href="basket.html">ShippingBasket</a></li>
+       <li><a href="basket.php">ShippingBasket</a></li>
         </ul>
  </div>
     
-<form action="loginuser.php" method="POST">
+<form action="loginuser.php" method="POST" onsubmit="return validateLogin()">
   <div class="signupcontainer">
     <h1><img class="signuplogo" class="formlogo" src="images/WhatsApp%20Image%202018-08-31%20at%202.50.20%20PM.jpeg" width="180px" height="100px"/></h1>
       <h2>Login</h2>
     <hr>
       <br>
         <div class="alert alert-error"><?=$_SESSION['message']?></div>
+      <div id="error"></div>
       <hr>
 
 
-      <label for="email"><b>Email</b></label>
-    <input class="inputbox" type="email" placeholder="Enter Email" name="Email" required>
+            <label for="email"><b>Email</b></label>
+    <input class="inputbox" type="email" placeholder="Enter Email" name="Email" id="Email">
+
       <br>
 
-    <label for="psw"><b>Password</b></label>
-    <input class="inputbox" type="password" placeholder="Enter Password" name="Password" required>
+        <label for="psw"><b>Password</b></label>
+    <input class="inputbox" type="password" placeholder="Enter Password" name="Password" id="Password">
+
       <br>
       
     

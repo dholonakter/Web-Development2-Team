@@ -1,0 +1,44 @@
+.simpleForm{
+    width:60%;
+    margin: 20px auto;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.simpleForm input{
+     width:100%;
+     margin: 10px 0px;
+     padding: 6px 4px;
+}
+.simpleForm button{
+     margin: 8px 0px;
+}
+.wrong-input {
+ border:1px solid red;
+ animation: shake 0.5s;
+ animation-iteration-count: 2;
+}
+@keyframes shake {
+     10%, 90% {
+         transform: translate3d(-1px, 0, 0);
+     }
+     
+     20%, 80% {
+         transform: translate3d(2px, 0, 0);
+     }
+
+     30%, 50%, 70% {
+         transform: translate3d(-4px, 0, 0);
+     }
+
+     40%, 60% {
+         transform: translate3d(4px, 0, 0);
+     }
+
+ }
+ .error{
+     color:red;
+     -webkit-margin-before: 0em;
+     -webkit-margin-after: 0em;
+     font-size:12px;
+ }

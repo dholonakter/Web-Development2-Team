@@ -1,22 +1,11 @@
 <?php
+include "dbconnect.php";
 session_start();
 
 // initializing variables
 $_SESSION['message']='';
 
-$servername = "studmysql01.fhict.local";
-$username = "dbi364365";
-$password = "Dholon";
-$dbname="dbi364365";
 
-//connect to the database
-
-$db = mysqli_connect($servername,$username,$password,$dbname);
-
-if ($db->connect_error)
-{
-    die("Connection failed: " . $db->connect_error);
-} 
 //htmlspecialchair prevents attackers from exploting the code by injecting html or javasript code
 //strip unneccessay characters with trim() function
 //remove baclashes with user input data striplashes() function
@@ -41,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD']== "POST")
             $Password=md5($Password);
             //check wheather email is used or not
             $checkuser = "SELECT * FROM User  WHERE Email = '$Email'";
-            $result=mysqli_query($db,$checkuser);
+            $result=mysqli_query($conn,$checkuser);
             $yes=mysqli_num_rows($result);
             if($yes>0)
             {
@@ -52,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD']== "POST")
             //insert data to the user table
             $sql ="INSERT INTO User (FullName, Email,Password)
              VALUES('$FullName','$Email', '$Password')";
-            if($db->query($sql)==true)
+            if($conn->query($sql)==true)
             {
                 
                 header("location: loginuser.php");
@@ -86,6 +75,7 @@ if ($_SERVER['REQUEST_METHOD']== "POST")
 <title>Register</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css"href="css/main.css" />
+    <script src="JS/script.js"></script>
 
 </head>
 
@@ -115,32 +105,39 @@ if ($_SERVER['REQUEST_METHOD']== "POST")
 
 <body>
     
-    <form action="register.php" method="POST">
+    <form action="register.php" method="POST" onsubmit="return validateForm()">
   <div class="signupcontainer">
     <h1><img class="signuplogo" class="formlogo" src="images/WhatsApp%20Image%202018-08-31%20at%202.50.20%20PM.jpeg" width="180px" height="100px"/></h1>
     <br><p>Please fill in this form to create an account.</p>
     <hr>
       <br>
-        <div class="alert alert-error"><?=$_SESSION['message']?></div>
+              <div class="alert alert-error"><?=$_SESSION['message']?></div>
+                 <div id="error"></div>
+
+
       <hr>
 
 
     <label for="fullname"><b>FullName</b></label>
-    <input class="inputbox" type="text" placeholder="Enter your name" name="FullName" required>
+    <input class="inputbox" type="text" placeholder="Enter your name" name="FullName" id="FullName" >
+
       <br>
       <label for="email"><b>Email</b></label>
-    <input class="inputbox" type="email" placeholder="Enter Email" name="Email" required>
-      <br>
+    <input class="inputbox" type="email" placeholder="Enter Email" name="Email" id="Email">
 
+      <br>
+      
     <label for="psw"><b>Password</b></label>
-    <input class="inputbox" type="password" placeholder="Enter Password" name="Password" required>
+    <input class="inputbox" type="password" placeholder="Enter Password" name="Password" id="Password">
       <br>
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input class="inputbox" type="password" placeholder="Repeat Password" name="confirmpassword" required>
+    <input class="inputbox" type="password" placeholder="Repeat Password" name="confirmpassword" id="confirmpassword">
+
     
     
  <p>Already have an account!!!<a href="loginuser.php">login here</a>.</p>
-
+      <div id="error"></div>
+   
 
       <button class="button" type="submit" class="signupbtn">Sign Up</button>
     </div>
@@ -152,3 +149,4 @@ if ($_SERVER['REQUEST_METHOD']== "POST")
 
 </body>
 </html>
+
