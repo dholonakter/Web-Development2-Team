@@ -1,14 +1,14 @@
 <?php 
 
-$servername = "studmysql01.fhict.local";
+/*$servername = "studmysql01.fhict.local";
 $username = "dbi364365";
 $password = "Dholon";
-$dbname="dbi364365";
+$dbname="dbi364365";*/
 
-/*$servername = "localhost";
+$servername = "localhost";
 $username = "root";
 $password = "";
-$dbname="mydb";*/
+$dbname="mydb";
 
 
 $conn = new mysqli($servername, $username, $password,$dbname);

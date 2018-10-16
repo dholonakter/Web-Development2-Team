@@ -87,7 +87,7 @@ var slideIndex = 0;
 showSlides();
 
 function showSlides() {
-   "use strict"
+   "use strict"           
     var i;
     var slides = document.getElementsByClassName("Slides");
     var dots = document.getElementsByClassName("dot");

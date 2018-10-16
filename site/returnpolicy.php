@@ -1,37 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Returnpolicy</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css"href="css/main.css" />
 
-</head>
-<body>
-<div class="topnavbar">
-    <div class="logo">
-    <a href="index.html"><img src="images/WhatsApp%20Image%202018-08-31%20at%202.50.20%20PM.jpeg" width="220px" height="100px"/></a>
+<?php include "header.php"; ?>
 
-    </div>
-    <div class="searchbar">
-        <input class="search-txt" type="text" name="" placeholder="type of search">
-        <a class="search-btn" href="#">
-           <i class="fas fa-search"></i>        
-        </a>
-    </div>
-    </div>
-<div class="navbar">
-        <ul >
-       <li><a href="index.php">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="product.html">Product</a></li>
-        <li><a href="returnpolicy.html">Rules</a></li>
-        <li><a href="contact.html">Contact</a></li>
-       <li><a href="loginuser.php">Login</a></li>
-       <li><a href="basket.html">ShoppingBasket</a></li>
-        </ul>
- </div>
-
-            <div class="container">
+         <div class="container">
             <h2>Cancelling Orders (Before delivery)</h2>
      <p>We know that it is very important for you ordering a dress for your special occasion and our cancelling policy is in accordance with this. However, it is IMPORTANT to note that our dresses and some accessories are made to order, and all started from scratch (including the Standard Size).  And the materials cannot be reused once the creation process has begun. The good news is that after placing your order, there is still time to change your mind.
  
@@ -89,10 +59,6 @@
             </div>
 
  
+<?php include "footer.php" ?>
 
-    <footer>
-        Copyright &copy; 2018 abc
-    </footer>
 
-</body>
-</html>
