@@ -23,7 +23,7 @@
         <ul >
        <li><a href="index.php">Home</a></li>
         <li><a href="about.php">About</a></li>
-        <li><a href="product.php">Product</a></li>
+        <li><a href="clothes.php">Product</a></li>
         <li><a href="returnpolicy.php">Rules</a></li>
         <li><a href="contact.php">Contact</a></li>
        <li><a href="loginuser.php">Login</a></li>

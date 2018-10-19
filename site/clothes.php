@@ -15,7 +15,7 @@
   </a>
   <div class="desc">POLO-STYLE DRESS
       39.95 EUR</div>
-        <div class="buybutton"><button type="button">Add to cart</button> </div> 
+       <button class="button" type="button">Add to cart</button> 
 </div>
 
 <div class="gallery">
@@ -24,7 +24,7 @@
   </a>
   <div class="desc">BOMBER JACKET
         49.95 EUR</div>
-    <div class="buybutton"><button type="button">Add to cart</button> </div>
+    <button class="button" type="button">Add to cart</button> 
 </div>
 
 <div class="gallery">
@@ -33,7 +33,7 @@
   </a>
   <div class="desc">TRICOT DRESS
         29.95 EUR</div>
-    <div class="buybutton"><button type="button">Add to cart</button> </div>
+    <button class="button" type="button">Add to cart</button> 
 </div>
 
 <div class="gallery">
@@ -42,7 +42,7 @@
   </a>
   <div class="desc">SHORT DRESS
         19.95 EUR</div>
-    <div class="buybutton"><button type="button">Add to cart</button> </div>
+    <button class="button" type="button">Add to cart</button> 
 </div>
     <div class="gallery">
   <a target="_blank" href="images/clothes3.jpeg">
@@ -50,7 +50,7 @@
   </a>
   <div class="desc">DRESS (VALANCE SLEEVES)
         15.99 EUR</div>
-        <div class="buybutton"><button type="button">Add to cart</button> </div>
+        <button class="button" type="button">Add to cart</button> 
 </div>
         </div>
     <?php include "footer.php" ?>

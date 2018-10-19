@@ -1,7 +1,7 @@
 
 <?php include "header.php"; ?>
 
-         <div class="container">
+         <div class="rulescontainer">
             <h2>Cancelling Orders (Before delivery)</h2>
      <p>We know that it is very important for you ordering a dress for your special occasion and our cancelling policy is in accordance with this. However, it is IMPORTANT to note that our dresses and some accessories are made to order, and all started from scratch (including the Standard Size).  And the materials cannot be reused once the creation process has begun. The good news is that after placing your order, there is still time to change your mind.
  

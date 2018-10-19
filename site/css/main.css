@@ -113,6 +113,10 @@ a:hover{
 }
 
 /*Homepage */
+.textcontainer{
+    margin-left: 300px;
+    margin-right: 200px;
+}
 /*slideshowimagepart,it will be implemented by javascript*/
 
 .slideshowcontainer {
@@ -148,7 +152,11 @@ figure{
 }
 
 /*Aboutpage*/
-
+.contentabout{
+    margin-left: 120px;
+    margin-right: 200px;
+    margin-bottom: 150px;
+}
 h2{
     text-align: center;
 }
@@ -190,14 +198,22 @@ h2{
 .rowgalary{
     clear: left;
 }
-.buybutton{
-    display: inline-block;
-    margin-left: 50px;
+.button {
     background-color: crimson;
     color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
 }
-buybutton:hover{
+
+button:hover {
     opacity: 0.8;
+}
+/*Rules*/
+.rulescontainer{
+    margin-left: 240px;
+    margin-right: 200px;
 }
 /*Shoppingbasket*/
 .items{
