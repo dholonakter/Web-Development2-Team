@@ -268,16 +268,58 @@ button:hover {
     margin-right: 200px;
 }
 /*Shoppingbasket*/
-.items{
+.basket {
     float: left;
-    
 }
-.payment{
-    
+.basketitem {
+  text-align: center; 
+  padding: 20px 30px;
+  height: 50px;
+  display: inline-block;
+  margin-left: 180px;
+    margin-top: 50px;
 }
-#error{
-    color: red;
+
+.basketbtn {
+    background-color: crimson;
+    color: white;
+    padding: 14px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
 }
+
+.basketquantity input {
+  -webkit-appearance: none;
+  border: none;
+  text-align: center;
+  width: 32px;
+  font-size: 16px;
+  color: black;
+  font-weight: 300;
+}
+.basketclearfix{
+    display: inline-block;
+    margin-top: 100px;
+}
+.left{
+    float: left;
+    margin-left: 230px;
+}
+.right{
+    text-align: right;
+    float: right;
+    margin-left: 630px;
+}
+.checkoutbtn{
+    background-color: crimson;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
 
 /*contact page */
 
